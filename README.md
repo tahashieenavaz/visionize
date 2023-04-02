@@ -1,7 +1,5 @@
 # Visionize
 
-My journey learning Computer Vision using CPP an OpenCV.
+## Introduction
 
-```
-g++ $argv -o a -std=c++11 -I/usr/local/include/opencv4 -L/usr/local/lib -lopencv_gapi -lopencv_highgui -lopencv_ml -lopencv_objdetect -lopencv_photo -lopencv_stitching -lopencv_video -lopencv_calib3d -lopencv_features2d -lopencv_dnn -lopencv_flann -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -I
-```
+I'm trying to make the vast field of Computer Vision using C++ easier and more understandable using OpenCV library. In the way of doing so, I am going to implement a library which is extremely high-level and radically readable which you can use to focus on your product instead of code with a tricky language like C++;
