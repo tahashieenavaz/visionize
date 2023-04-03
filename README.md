@@ -6,6 +6,7 @@ I'm trying to make the vast field of Computer Vision using C++ easier and more u
 
 - [Mouse Interactions](#mouse-interaction)
 - [Average Color](#average-color-on-roi-region-of-interest)
+- [Euclidean Distance](#euclidean-distance)
 
 ## Mouse Interaction
 
@@ -21,12 +22,12 @@ int main() {
 
 	// ...
 	setMouseCallback(key, onMouse);
-	// ...	
+	// ...
 
 }
 ```
 
-Furthermore, data is often an image which we can interpret in two ways. We have to cast it to __void__ and then we will cast them back into our callback with one of below ways.
+Furthermore, data is often an image which we can interpret in two ways. We have to cast it to **void** and then we will cast them back into our callback with one of below ways.
 
 ```cpp
 static void function onMouse(int event, int x, int y, int flag, void* data);
@@ -37,7 +38,7 @@ int main() {
 
 	// ...
 	setMouseCallback(key, onMouse, (void*) &image);
-	// ...	
+	// ...
 
 }
 
@@ -59,6 +60,20 @@ int main() {
 	Mat image = imread("image.jpg");
 	Mat roi = image(Rect(20, 20, 20, 20));
 	Scalar average = mean(roi);
+	// ...
+}
+```
+
+## Euclidean Distance
+
+In some cases, for example generating a mask, we need to calculate the distance between two Scalar or Vec3b objects. You may have come across the term Euclidean Distance which is easy to calculate using OpenCV.
+
+```cpp
+int main() {
+	Ve3b first = getClickedPoint();
+	Ve3b second = getPoint(244, 45);
+	double distance = norm(first, second, NORM_L2);
+	cout << distance << endl;
 	// ...
 }
 ```
